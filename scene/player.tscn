@@ -483,3 +483,10 @@ libraries = {
 position = Vector2(0, 6)
 rotation = -1.5708
 shape = SubResource("CapsuleShape2D_hjaqi")
+
+[node name="RayCast_Ledge" type="RayCast2D" parent="."]
+target_position = Vector2(31, 0)
+
+[node name="RayCast_Wall" type="RayCast2D" parent="."]
+position = Vector2(0, 9)
+target_position = Vector2(22, 0)
