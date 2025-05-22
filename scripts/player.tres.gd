@@ -20,9 +20,9 @@ const CLIMB_SPEED = 60.0
 # --- NODES ---
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var anim_player: AnimationPlayer = $AnimationPlayer
-
 @onready var ray_ledge: RayCast2D = $RayCast_Ledge
 @onready var ray_wall: RayCast2D = $RayCast_Wall
+
 # --- STATE ---
 var was_on_floor := false
 var coyote_timer := 0.0
@@ -34,14 +34,7 @@ var dodge_timer := 0.0
 
 var is_climbing := false
 
-var is_ledge_climbing := false
-var ledge_target_pos := Vector2.ZERO
-
 var airborne_state := ""
-var ledge_check_start := Vector2.ZERO
-var ledge_check_end := Vector2.ZERO
-var wall_check_start := Vector2.ZERO
-var wall_check_end := Vector2.ZERO
 
 func _ready():
 	was_on_floor = is_on_floor()
@@ -52,6 +45,7 @@ func _physics_process(delta):
 	coyote_timer = COYOTE_TIME if is_on_floor() else coyote_timer - delta
 	jump_buffer = max(0.0, jump_buffer - delta)
 	dodge_cd = max(0.0, dodge_cd - delta)
+
 	# ── Input
 	var dir = Input.get_axis("Left", "Right")
 	var wants_jump = Input.is_action_just_pressed("Jump")
@@ -61,50 +55,29 @@ func _physics_process(delta):
 	if wants_jump:
 		jump_buffer = JUMP_BUFFER
 
-	# ── WALL CLIMB START/END ────────────────────────────────────────────
-	# If you’re in mid-air, touching a wall, and holding up → start climb
-	if not is_on_floor() and is_on_wall() and Input.is_action_pressed("Up"):
+	# ── WALL CLIMB START/MAINTAIN/END
+	var can_climb = not is_on_floor() and is_on_wall() and Input.is_action_pressed("Up")
+
+	if can_climb:
 		if not is_climbing:
 			is_climbing = true
 			velocity = Vector2.ZERO
 			_play_animation("WallClimb")
 	else:
-		# if you drop off the wall or let go of Up, exit climb state
 		if is_climbing:
 			is_climbing = false
-				# immediately go into fall state so you don’t snap back to idle
-			airborne_state = "fall"
-			_play_animation("Fall")
+			# only play fall if we're not transitioning to a wall jump or similar
+			if not is_on_floor():
+				airborne_state = "fall"
+				_play_animation("Fall")
 
-	# ── HANDLE CLIMB MOTION ──────────────────────────────────────────────
+	# ── HANDLE CLIMB MOTION
 	if is_climbing:
-		# check for ledge above
-		print_debug("Try to climb", check_for_ledge())
-		if check_for_ledge():
-			is_climbing = false
-			is_ledge_climbing = true
-			_play_animation("LedgeClimb")
-
-			# Calculate where to move the character (ledge position offset)
-			var offset_x = sprite.texture.get_width() * 0.5 * (-1 if sprite.flip_h else 1)
-			ledge_target_pos = global_position + Vector2(offset_x, -sprite.texture.get_height())
-		else:
+			print_debug("check_for_ledge", check_for_ledge())
 			var climb_dir = Input.get_axis("Down", "Up")
 			velocity.y = - climb_dir * CLIMB_SPEED
 			move_and_slide()
 			return
-	# ── LEDGE CLIMB MOTION ─────────────────────────────────────────────
-	if is_ledge_climbing:
-		var to_target = ledge_target_pos - global_position
-		var move_step = to_target.normalized() * CLIMB_SPEED * delta
-
-		if move_step.length() > to_target.length():
-			global_position = ledge_target_pos
-			is_ledge_climbing = false
-			_play_animation("Idle")
-		else:
-			global_position += move_step
-		return
 
 	# ── WALL JUMP
 	if jump_buffer > 0 and not is_on_floor() and is_on_wall():
@@ -169,8 +142,6 @@ func _physics_process(delta):
 
 	# ── Airborne Animations
 	if not is_on_floor() and not is_dodging and not is_attacking:
-		# just left the ground → already handled by was_on_floor check above
-		# now if you switch from going up to down, trigger Fall once:
 		if velocity.y > 0 and airborne_state != "fall":
 			_play_animation("Fall")
 			airborne_state = "fall"
@@ -180,7 +151,6 @@ func _physics_process(delta):
 			_play_animation("Run" if is_running else "Walk")
 		else:
 			_play_animation("Idle")
-
 
 func _play_animation(anim_name: String) -> void:
 	if anim_player.current_animation != anim_name:
@@ -196,16 +166,10 @@ func _on_animation_finished(finished_name: String) -> void:
 		"Dash":
 			is_dodging = false
 		"LedgeClimb":
-			# Once animation finishes, snap to ledge if not already there
-			global_position = ledge_target_pos
-			is_ledge_climbing = false
+			print("finished LedgeClimb")
 			_play_animation("Idle")
 
-
 func check_for_ledge() -> bool:
-	if not is_on_wall():
-		return false
-
 	# update both raycasts
 	ray_ledge.force_raycast_update()
 	ray_wall.force_raycast_update()
