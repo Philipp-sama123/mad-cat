@@ -12,7 +12,6 @@ const JUMP_BUFFER = 0.1
 const DODGE_SPEED = 150.0
 const DODGE_COOLDOWN = 0.6
 const DODGE_DURATION = 0.6
-# ← New wall-jump constants
 const WALL_JUMP_H_SPEED = 200.0
 const WALL_JUMP_V_SPEED = -300.0
 
@@ -28,6 +27,9 @@ var dodge_cd := 0.0
 var is_dodging := false
 var is_attacking := false
 var dodge_timer := 0.0
+
+# ← NEW: track which airborne anim we’re in: "jump", "fall" or ""
+var airborne_state := ""
 
 func _ready():
 	was_on_floor = is_on_floor()
@@ -48,23 +50,23 @@ func _physics_process(delta):
 	if wants_jump:
 		jump_buffer = JUMP_BUFFER
 
-	# ── WALL JUMP (small addition!)
+	# ── WALL JUMP
 	if jump_buffer > 0 and not is_on_floor() and is_on_wall():
-		# grab the wall normal from the last collision
 		var col = get_last_slide_collision()
 		var wall_normal = col.get_normal()
-		# push off horizontally and vertically
-		velocity.x = - wall_normal.x * WALL_JUMP_H_SPEED
+		velocity.x = -wall_normal.x * WALL_JUMP_H_SPEED
 		velocity.y = WALL_JUMP_V_SPEED
 		_play_animation("Jump")
 		jump_buffer = 0
 		coyote_timer = 0
-	# ── REGULAR JUMP (buffer + coyote)
+		airborne_state = "jump"
+	# ── REGULAR JUMP
 	elif jump_buffer > 0 and coyote_timer > 0:
 		velocity.y = JUMP_VELOCITY
 		_play_animation("Jump")
 		jump_buffer = 0
 		coyote_timer = 0
+		airborne_state = "jump"
 
 	# ── Gravity
 	if not is_on_floor():
@@ -87,10 +89,10 @@ func _physics_process(delta):
 		dodge_timer -= delta
 		var dir_sign = -1 if sprite.flip_h else 1
 		velocity.x = dir_sign * DODGE_SPEED
-		if dodge_timer <= 0.0:
+		if dodge_timer <= 0:
 			is_dodging = false
 
-	# ── Horizontal Movement (when free)
+	# ── Horizontal Movement
 	if not is_dodging and not is_attacking:
 		if dir == 0 and is_on_floor():
 			velocity.x = move_toward(velocity.x, 0, FRICTION * delta)
@@ -100,24 +102,26 @@ func _physics_process(delta):
 		if dir != 0:
 			sprite.flip_h = dir < 0
 
-	# ── move & slide
+	# ── Move & Slide
 	move_and_slide()
 
 	# ── Landing
 	if not was_on_floor and is_on_floor():
 		_play_animation("Land")
+		airborne_state = ""
 	was_on_floor = is_on_floor()
 
-	# ── Airborne animations
+	# ── Airborne Animations
 	if not is_on_floor() and not is_dodging and not is_attacking:
-		if velocity.y < 0 and anim_player.current_animation != "Jump":
-			_play_animation("Jump")
-		elif velocity.y > 0 and anim_player.current_animation != "Fall":
+		# just left the ground → already handled by was_on_floor check above
+		# now if you switch from going up to down, trigger Fall once:
+		if velocity.y > 0 and airborne_state != "fall":
 			_play_animation("Fall")
-	# ── Ground animations
+			airborne_state = "fall"
+	# ── Ground Animations
 	elif is_on_floor() and not is_dodging and not is_attacking:
 		if abs(dir) > 0:
-			_play_animation("Run" if is_running else "Walk")
+			_play_animation( "Run" if is_running else "Walk")
 		else:
 			_play_animation("Idle")
 
