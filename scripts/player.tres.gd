@@ -15,6 +15,8 @@ const DODGE_DURATION = 0.6
 const WALL_JUMP_H_SPEED = 200.0
 const WALL_JUMP_V_SPEED = -300.0
 
+const CLIMB_SPEED = 60.0
+
 # --- NODES ---
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var anim_player: AnimationPlayer = $AnimationPlayer
@@ -28,7 +30,8 @@ var is_dodging := false
 var is_attacking := false
 var dodge_timer := 0.0
 
-# ← NEW: track which airborne anim we’re in: "jump", "fall" or ""
+var is_climbing := false # ← NEW: are we in climb mode?
+
 var airborne_state := ""
 
 func _ready():
@@ -50,11 +53,38 @@ func _physics_process(delta):
 	if wants_jump:
 		jump_buffer = JUMP_BUFFER
 
+
+	# ── WALL CLIMB START/END ────────────────────────────────────────────
+	# If you’re in mid-air, touching a wall, and holding up → start climb
+	if not is_on_floor() and is_on_wall() and Input.is_action_pressed("Up"):
+		print_debug("Try to climb")
+		if not is_climbing:
+			is_climbing = true
+			velocity = Vector2.ZERO
+			_play_animation("WallClimb")
+	else:
+		# if you drop off the wall or let go of Up, exit climb state
+		if is_climbing:
+			is_climbing = false
+				# immediately go into fall state so you don’t snap back to idle
+			airborne_state = "fall"
+			_play_animation("Fall")
+
+	# ── HANDLE CLIMB MOTION ──────────────────────────────────────────────
+	if is_climbing:
+		# you only move vertically
+		var climb_dir = Input.get_axis("Down", "Up")
+		velocity.y = - climb_dir * CLIMB_SPEED
+		# no gravity while climbing!
+		# skip the normal gravity & move_and_slide for a pure climb
+		move_and_slide()
+		return # skip all other movement & animation logic
+
 	# ── WALL JUMP
 	if jump_buffer > 0 and not is_on_floor() and is_on_wall():
 		var col = get_last_slide_collision()
 		var wall_normal = col.get_normal()
-		velocity.x = -wall_normal.x * WALL_JUMP_H_SPEED
+		velocity.x = - wall_normal.x * WALL_JUMP_H_SPEED
 		velocity.y = WALL_JUMP_V_SPEED
 		_play_animation("Jump")
 		jump_buffer = 0
@@ -102,6 +132,7 @@ func _physics_process(delta):
 		if dir != 0:
 			sprite.flip_h = dir < 0
 
+
 	# ── Move & Slide
 	move_and_slide()
 
@@ -121,7 +152,7 @@ func _physics_process(delta):
 	# ── Ground Animations
 	elif is_on_floor() and not is_dodging and not is_attacking:
 		if abs(dir) > 0:
-			_play_animation( "Run" if is_running else "Walk")
+			_play_animation("Run" if is_running else "Walk")
 		else:
 			_play_animation("Idle")
 
