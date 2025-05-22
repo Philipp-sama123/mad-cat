@@ -1,0 +1,57 @@
+# ==============================
+# Godot 4+ project files to ignore
+# ==============================
+
+# Godot editor temporary & cache
+.godot/                  # per‑machine editor settings
+.import/                 # imported asset cache
+.export/                 # export templates cache
+.temp/                   # Godot’s temporary files
+
+# Mono / C# users (if you enable .NET)
+.mono/                   # compiled assemblies, NuGet cache
+
+# Built game binaries (don’t commit your exported games!)
+*.pck
+*.exe
+*.apk
+*.aab
+*.ipa
+*.dmg
+*.xcodeproj/
+*.xcworkspace/
+build_release/           # or whatever build dir you use
+
+# ==============================
+# OS‑specific ignores
+# ==============================
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Linux
+*~
+
+# ==============================
+# IDE / Editor folders
+# ==============================
+
+# Visual Studio / Rider / VSCode
+.vscode/
+.vs/
+.idea/
+
+# ==============================
+# User‑local or sensitive files
+# ==============================
+
+# (Optionally) if you store passwords or API keys locally
+*.config
+*.env

@@ -1,0 +1,78 @@
+# ==============================
+# Text files – normalize to LF
+# ==============================
+# Godot project & scripts
+*.godot        text eol=lf
+*.cfg          text eol=lf
+*.txt          text eol=lf
+*.md           text eol=lf
+*.yml          text eol=lf
+
+# Godot scene & resource files
+*.tscn         text eol=lf
+*.scn          text eol=lf
+*.tres         text eol=lf
+*.res          text eol=lf
+
+# GDScript, C#, shader, and VisualShader files
+*.gd           text eol=lf
+*.cs           text eol=lf
+*.shader       text eol=lf
+*.visualshader text eol=lf
+
+# Other code
+*.json         text eol=lf
+*.xml          text eol=lf
+*.csv          text eol=lf
+
+# ==============================
+# Binary files – do not diff or normalize
+# ==============================
+# Packed scenes, assets, media
+*.import       binary
+*.pck          binary
+*.exe          binary
+*.apk          binary
+*.aab          binary
+*.ipa          binary
+*.dmg          binary
+
+# 3D models & images
+*.glb          binary
+*.obj          binary
+*.fbx          binary
+*.dae          binary
+*.stl          binary
+
+*.png          binary
+*.jpg          binary
+*.jpeg         binary
+*.gif          binary
+*.tga          binary
+*.bmp          binary
+*.hdr          binary
+
+# Audio
+*.wav          binary
+*.ogg          binary
+*.mp3          binary
+*.flac         binary
+
+# Fonts
+*.ttf          binary
+*.otf          binary
+*.woff         binary
+*.woff2        binary
+
+# Composite assets / archives
+*.zip          binary
+*.rar          binary
+*.7z           binary
+
+# ==============================
+# Linguist overrides
+# ==============================
+# Treat Godot file types as their own languages for syntax highlighting
+*.tscn         linguist-language=GodotScene
+*.tres         linguist-language=GodotResource
+*.gd           linguist-language=GDScript
