@@ -1,33 +1,33 @@
 extends CharacterBody2D
 
 # --- CONFIG ---
-const WALK_SPEED          = 25.0
-const RUN_SPEED           = 50.0
-const ACCEL               = 400.0
-const FRICTION            = 600.0
-const JUMP_VELOCITY       = -300.0
-const GRAVITY             = 900.0
-const COYOTE_TIME         = 0.25
-const JUMP_BUFFER         = 0.1
-const DODGE_SPEED         = 150.0
-const DODGE_COOLDOWN      = 0.6
-const DODGE_DURATION      = 0.6
+const WALK_SPEED = 25.0
+const RUN_SPEED = 50.0
+const ACCEL = 400.0
+const FRICTION = 600.0
+const JUMP_VELOCITY = -300.0
+const GRAVITY = 900.0
+const COYOTE_TIME = 0.25
+const JUMP_BUFFER = 0.1
+const DODGE_SPEED = 150.0
+const DODGE_COOLDOWN = 0.6
+const DODGE_DURATION = 0.6
 # ← New wall-jump constants
-const WALL_JUMP_H_SPEED   = 200.0
-const WALL_JUMP_V_SPEED   = -300.0
+const WALL_JUMP_H_SPEED = 200.0
+const WALL_JUMP_V_SPEED = -300.0
 
 # --- NODES ---
-@onready var sprite      : Sprite2D        = $Sprite2D
-@onready var anim_player : AnimationPlayer = $AnimationPlayer
+@onready var sprite: Sprite2D = $Sprite2D
+@onready var anim_player: AnimationPlayer = $AnimationPlayer
 
 # --- STATE ---
-var was_on_floor   := false
-var coyote_timer   := 0.0
-var jump_buffer    := 0.0
-var dodge_cd       := 0.0
-var is_dodging     := false
-var is_attacking   := false
-var dodge_timer    := 0.0
+var was_on_floor := false
+var coyote_timer := 0.0
+var jump_buffer := 0.0
+var dodge_cd := 0.0
+var is_dodging := false
+var is_attacking := false
+var dodge_timer := 0.0
 
 func _ready():
 	was_on_floor = is_on_floor()
@@ -36,15 +36,15 @@ func _ready():
 func _physics_process(delta):
 	# ── Timers
 	coyote_timer = COYOTE_TIME if is_on_floor() else coyote_timer - delta
-	jump_buffer  = max(0.0, jump_buffer - delta)
-	dodge_cd     = max(0.0, dodge_cd    - delta)
+	jump_buffer = max(0.0, jump_buffer - delta)
+	dodge_cd = max(0.0, dodge_cd - delta)
 
 	# ── Input
-	var dir          = Input.get_axis("Left", "Right")
-	var wants_jump   = Input.is_action_just_pressed("Jump")
-	var wants_dodge  = Input.is_action_just_pressed("Dash")
+	var dir = Input.get_axis("Left", "Right")
+	var wants_jump = Input.is_action_just_pressed("Jump")
+	var wants_dodge = Input.is_action_just_pressed("Dash")
 	var wants_attack = Input.is_action_just_pressed("Attack")
-	var is_running   = Input.is_action_pressed("Run")
+	var is_running = Input.is_action_pressed("Run")
 	if wants_jump:
 		jump_buffer = JUMP_BUFFER
 
@@ -54,7 +54,7 @@ func _physics_process(delta):
 		var col = get_last_slide_collision()
 		var wall_normal = col.get_normal()
 		# push off horizontally and vertically
-		velocity.x = -wall_normal.x * WALL_JUMP_H_SPEED
+		velocity.x = - wall_normal.x * WALL_JUMP_H_SPEED
 		velocity.y = WALL_JUMP_V_SPEED
 		_play_animation("Jump")
 		jump_buffer = 0
@@ -78,7 +78,7 @@ func _physics_process(delta):
 	# ── Dodge
 	if wants_dodge and dodge_cd <= 0 and not is_attacking and not is_dodging:
 		is_dodging = true
-		dodge_cd   = DODGE_COOLDOWN
+		dodge_cd = DODGE_COOLDOWN
 		dodge_timer = DODGE_DURATION
 		var dir_sign = -1 if sprite.flip_h else 1
 		velocity.x = dir_sign * DODGE_SPEED
