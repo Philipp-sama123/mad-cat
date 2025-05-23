@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://bo44o72v6k62c"]
+[gd_scene load_steps=31 format=3 uid="uid://bo44o72v6k62c"]
 
 [ext_resource type="Script" uid="uid://ck231hay1asoh" path="res://scripts/player.tres.gd" id="1_hjaqi"]
 [ext_resource type="Texture2D" uid="uid://ca0ruxomody84" path="res://assets/cat_01_spritesheet.png" id="1_xo3ru"]
@@ -460,11 +460,15 @@ _data = {
 &"WallIdle": SubResource("Animation_kk4ol")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hjaqi"]
+size = Vector2(17, 13)
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hjaqi"]
 radius = 8.0
-height = 16.0
+height = 20.0
 
 [node name="Player" type="CharacterBody2D"]
+collision_layer = 2
 script = ExtResource("1_hjaqi")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -480,12 +484,20 @@ libraries = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, 6)
+position = Vector2(-0.5, 6.5)
+shape = SubResource("RectangleShape2D_hjaqi")
+
+[node name="RayCast_Ledge" type="RayCast2D" parent="CollisionShape2D"]
+position = Vector2(0.5, -6.5)
+target_position = Vector2(27, 0)
+
+[node name="RayCast_Wall" type="RayCast2D" parent="CollisionShape2D"]
+position = Vector2(0.5, 0.5)
+target_position = Vector2(11, 0)
+
+[node name="AttackArea" type="Area2D" parent="."]
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
+position = Vector2(10, 1)
 shape = SubResource("CapsuleShape2D_hjaqi")
-
-[node name="RayCast_Ledge" type="RayCast2D" parent="."]
-target_position = Vector2(31, 0)
-
-[node name="RayCast_Wall" type="RayCast2D" parent="."]
-position = Vector2(0, 9)
-target_position = Vector2(22, 0)

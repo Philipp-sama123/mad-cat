@@ -1,3 +1,4 @@
-res://scripts/player.tres.gd
-res://scene/player.tscn
 res://scene/Main.tscn
+res://scene/player.tscn
+res://scene/barrel.tscn
+res://scene/chest.tscn
