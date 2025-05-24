@@ -5,3 +5,5 @@ res://scene/chest.tscn
 res://tile.tscn
 res://mapgenerator.tscn
 res://scripts/player.tres.gd
+res://ai_chicken.gd
+res://scene/ai_chicken.tscn
