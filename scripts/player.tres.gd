@@ -11,7 +11,7 @@ const COYOTE_TIME      = 0.5        # shortened for tighter control
 const JUMP_BUFFER_TIME = 0.1
 const DODGE_SPEED      = 150.0
 const DODGE_COOLDOWN   = 0.6
-const DODGE_DURATION   = 0.3        # quicker dodge
+const DODGE_DURATION   = 0.5        # quicker dodge
 const WALL_JUMP_H      = 200.0
 const WALL_JUMP_V      = -300.0
 const CLIMB_SPEED      = 15.0
@@ -65,7 +65,9 @@ func _physics_process(delta: float) -> void:
 	# skip movement during ledge climb
 	if is_ledge_climbing:
 		return
-
+	if is_attacking:
+		velocity = Vector2.ZERO
+		return
 	# input
 	var dir = Input.get_axis("Left", "Right")
 	if Input.is_action_just_pressed("Jump"):

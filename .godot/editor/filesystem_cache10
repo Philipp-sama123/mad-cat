@@ -1,12 +1,12 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1748080780
+::res://::1748110523
+ai_chicken.gd::GDScript::2256912277030371324::1748089842::0::1::::<>CharacterBody2D<><>0<>0<><>::
 icon.svg::CompressedTexture2D/CompressedTexture2D::7884798144622045045::1747212203::1747212402::1::::<><><>0<>0<>1c6c2da4ac2ae380556eb0b7d9893405<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
-mapgenerator.tscn::PackedScene::5627270514605169939::1748075445::0::1::::<><><>0<>0<><>::uid://crij0u37lyg53::::res://scripts/map_generator.gd
-ai_chicken.gd::GDScript::2256912277030371324::1748080529::0::1::::<>CharacterBody2D<><>0<>0<><>::
-tile.tscn::PackedScene::991037335435701696::1748075445::0::1::::<><><>0<>0<><>::uid://bc6k827ibkjr4::::res://assets/SSWorlds/MainLevBuild-ezgif.com-crop.png
+mapgenerator.tscn::PackedScene::5627270514605169939::1748093832::0::1::::<><><>0<>0<><>::uid://crij0u37lyg53::::res://scripts/map_generator.gd
+tile.tscn::PackedScene::991037335435701696::1748093832::0::1::::<><><>0<>0<><>::uid://bc6k827ibkjr4::::res://assets/SSWorlds/MainLevBuild-ezgif.com-crop.png
 ::res://assets/::1748080791
 cat_01_spritesheet.png::CompressedTexture2D/CompressedTexture2D::4825519946221220055::1747301158::1747301159::1::::<><><>0<>0<>4bf28a854e6572dfbe5c7bcc4762faac<>res://.godot/imported/cat_01_spritesheet.png-ef36cbca13be77b38e49ab5a4c7ae21a.ctex::
-chicken_sprite_sheet.png::CompressedTexture2D::5206878443641906282::1748076569::1748076569::1::::<><><>0<>0<>a22351fe6d97a1df56f4f5f01d8c7fd1<>res://.godot/imported/chicken_sprite_sheet.png-8481e83e84e2ef2d777ea86e39a7f35b.ctex::
+chicken_sprite_sheet.png::CompressedTexture2D/CompressedTexture2D::5206878443641906282::1748076569::1748076569::1::::<><><>0<>0<>a22351fe6d97a1df56f4f5f01d8c7fd1<>res://.godot/imported/chicken_sprite_sheet.png-8481e83e84e2ef2d777ea86e39a7f35b.ctex::
 Destructible Objects Sprite Sheet.png::CompressedTexture2D/CompressedTexture2D::1768789041228103326::1747857354::1747857354::1::::<><><>0<>0<>04f8378be694d83cf720d5c5148a1e44<>res://.godot/imported/Destructible Objects Sprite Sheet.png-4597811187f1886a51aa197e8747e128.ctex::
 spritesheet.png::CompressedTexture2D/CompressedTexture2D::6861041993488589083::1747300224::1747300225::1::::<><><>0<>0<>74cb105db3f7ab7654a5d5f911221f10<>res://.godot/imported/spritesheet.png-76e0b916bc20d45ac6900db6e21d8a9e.ctex::
 ::res://assets/AnimatedPickups/::1747857354
@@ -211,22 +211,22 @@ cat05_sneak_strip8.png::CompressedTexture2D/CompressedTexture2D::648653654549051
 cat05_walk_strip8.png::CompressedTexture2D/CompressedTexture2D::1393437854311488941::1747299262::1747299264::1::::<><><>0<>0<>e67143921240fa4328c747a395746998<>res://.godot/imported/cat05_walk_strip8.png-dd00687e28628c75ac8243cce9244743.ctex::
 cat05_wallclimb_strip8.png::CompressedTexture2D/CompressedTexture2D::7475350680485332063::1747299262::1747299264::1::::<><><>0<>0<>71830e828f093eb56a76fa85dff7f6e5<>res://.godot/imported/cat05_wallclimb_strip8.png-083c33f6ed27cb9c743590d4374263b5.ctex::
 cat05_wallgrab_strip8.png::CompressedTexture2D/CompressedTexture2D::2014873711528308307::1747299262::1747299264::1::::<><><>0<>0<>5801f476b6a0d104a894d2f5b12ecdfb<>res://.godot/imported/cat05_wallgrab_strip8.png-773274dfb961bfd8a1578949ef9f3237.ctex::
-::res://assets/chickenpack_spritesheets/::1748080791
-01_chicken_idle.png::CompressedTexture2D::6046152523018395686::1748080791::1748080792::1::::<><><>0<>0<>ca58325f90882ae800124d329922b305<>res://.godot/imported/01_chicken_idle.png-b7ae1688fa971bf02761c61099dc3c9b.ctex::
-02_chicken_idle.png::CompressedTexture2D::2633470425077116534::1748080791::1748080792::1::::<><><>0<>0<>7bc01b67e943b40c01e24ebfa812c518<>res://.godot/imported/02_chicken_idle.png-015436cd27bbc10d96432d233e4a6d59.ctex::
-03_chicken_walk.png::CompressedTexture2D::4335453014575321128::1748080791::1748080792::1::::<><><>0<>0<>5942ed9cea608b0587aa0485e37a5d46<>res://.godot/imported/03_chicken_walk.png-0a1e19a6a4fc3bafb9809499fa495d9e.ctex::
-04_chicken_run.png::CompressedTexture2D::354193631444189409::1748080791::1748080792::1::::<><><>0<>0<>a083a3668ae9465a4b227326bcf9f50c<>res://.godot/imported/04_chicken_run.png-aab15b4b0b40a6c61334bf1559eb6d07.ctex::
-05_chicken_fall.png::CompressedTexture2D::6849238382851066727::1748080791::1748080792::1::::<><><>0<>0<>ad08efb6c09f085ebab6796a258c2aa7<>res://.godot/imported/05_chicken_fall.png-bd9a8b6e9c1a9aa77152e3c73110c6b9.ctex::
-06_chicken_land.png::CompressedTexture2D::4794725263181743777::1748080791::1748080792::1::::<><><>0<>0<>234b454c857e5aeba07cf339c9c7a8c1<>res://.godot/imported/06_chicken_land.png-c72d39d60356f372751794a5acb18c62.ctex::
-07_chicken_take_off.png::CompressedTexture2D::129323797203897713::1748080791::1748080792::1::::<><><>0<>0<>88b08320ac5d6a10b401c3dc2df00a50<>res://.godot/imported/07_chicken_take_off.png-8eda89124f92ceb09e1af732f7a6e01e.ctex::
-08_chicken_fly.png::CompressedTexture2D::7080203271427505872::1748080791::1748080792::1::::<><><>0<>0<>928d872f05e6161266211ccbda227896<>res://.godot/imported/08_chicken_fly.png-a82ddb9ab5b0c679df30aa6d0a02fb4f.ctex::
-09_chicken_air_Attack.png::CompressedTexture2D::946015502417642806::1748080791::1748080792::1::::<><><>0<>0<>13ec08b513322d6fe1fa9a1338562085<>res://.godot/imported/09_chicken_air_Attack.png-2f3a7101dc16ed5552624f79cf0367e0.ctex::
-10_chicken_ground_attack.png::CompressedTexture2D::1065912551859437571::1748080791::1748080792::1::::<><><>0<>0<>b28d188e0b7043b1f3fe915c4ad0ad24<>res://.godot/imported/10_chicken_ground_attack.png-4ce34534cce5596c6c2a0c24b833c0ca.ctex::
-11_chicken_peck.png::CompressedTexture2D::7517861933956048396::1748080791::1748080792::1::::<><><>0<>0<>adbac19abe65346e9c5b68655e8e8308<>res://.godot/imported/11_chicken_peck.png-e52e3e49fc365148bf2d2a75d8c7ba04.ctex::
-12_chicken_sit.png::CompressedTexture2D::2442414984366505803::1748080791::1748080792::1::::<><><>0<>0<>3c25bfde26c03285cf63dab946a20c0d<>res://.godot/imported/12_chicken_sit.png-0dcd12edaf2beb3181c51a1000c03016.ctex::
-13_chicken_hurt.png::CompressedTexture2D::6149164045656533085::1748080791::1748080792::1::::<><><>0<>0<>14575f758930733c9a56ae277c4efa69<>res://.godot/imported/13_chicken_hurt.png-89dd3ef7b884bfda47ffa68d91f0b96c.ctex::
-14_chicken_fright.png::CompressedTexture2D::2033058146216351293::1748080791::1748080792::1::::<><><>0<>0<>7460eb3b17600d0a721d1a3f5e95fb3d<>res://.godot/imported/14_chicken_fright.png-f015e9dc89a2fe4660690a8f49b3f8a9.ctex::
-15_chicken_die.png::CompressedTexture2D::3884245397606587419::1748080791::1748080792::1::::<><><>0<>0<>61e06e2a04669fcd6e62f257f35195d0<>res://.godot/imported/15_chicken_die.png-43816d7f5bf9a8ddb9193b676bf3a9cb.ctex::
+::res://assets/chickenpack_spritesheets/::1748080792
+01_chicken_idle.png::CompressedTexture2D/CompressedTexture2D::6046152523018395686::1748080791::1748080792::1::::<><><>0<>0<>ca58325f90882ae800124d329922b305<>res://.godot/imported/01_chicken_idle.png-b7ae1688fa971bf02761c61099dc3c9b.ctex::
+02_chicken_idle.png::CompressedTexture2D/CompressedTexture2D::2633470425077116534::1748080791::1748080792::1::::<><><>0<>0<>7bc01b67e943b40c01e24ebfa812c518<>res://.godot/imported/02_chicken_idle.png-015436cd27bbc10d96432d233e4a6d59.ctex::
+03_chicken_walk.png::CompressedTexture2D/CompressedTexture2D::4335453014575321128::1748080791::1748080792::1::::<><><>0<>0<>5942ed9cea608b0587aa0485e37a5d46<>res://.godot/imported/03_chicken_walk.png-0a1e19a6a4fc3bafb9809499fa495d9e.ctex::
+04_chicken_run.png::CompressedTexture2D/CompressedTexture2D::354193631444189409::1748080791::1748080792::1::::<><><>0<>0<>a083a3668ae9465a4b227326bcf9f50c<>res://.godot/imported/04_chicken_run.png-aab15b4b0b40a6c61334bf1559eb6d07.ctex::
+05_chicken_fall.png::CompressedTexture2D/CompressedTexture2D::6849238382851066727::1748080791::1748080792::1::::<><><>0<>0<>ad08efb6c09f085ebab6796a258c2aa7<>res://.godot/imported/05_chicken_fall.png-bd9a8b6e9c1a9aa77152e3c73110c6b9.ctex::
+06_chicken_land.png::CompressedTexture2D/CompressedTexture2D::4794725263181743777::1748080791::1748080792::1::::<><><>0<>0<>234b454c857e5aeba07cf339c9c7a8c1<>res://.godot/imported/06_chicken_land.png-c72d39d60356f372751794a5acb18c62.ctex::
+07_chicken_take_off.png::CompressedTexture2D/CompressedTexture2D::129323797203897713::1748080791::1748080792::1::::<><><>0<>0<>88b08320ac5d6a10b401c3dc2df00a50<>res://.godot/imported/07_chicken_take_off.png-8eda89124f92ceb09e1af732f7a6e01e.ctex::
+08_chicken_fly.png::CompressedTexture2D/CompressedTexture2D::7080203271427505872::1748080791::1748080792::1::::<><><>0<>0<>928d872f05e6161266211ccbda227896<>res://.godot/imported/08_chicken_fly.png-a82ddb9ab5b0c679df30aa6d0a02fb4f.ctex::
+09_chicken_air_Attack.png::CompressedTexture2D/CompressedTexture2D::946015502417642806::1748080791::1748080792::1::::<><><>0<>0<>13ec08b513322d6fe1fa9a1338562085<>res://.godot/imported/09_chicken_air_Attack.png-2f3a7101dc16ed5552624f79cf0367e0.ctex::
+10_chicken_ground_attack.png::CompressedTexture2D/CompressedTexture2D::1065912551859437571::1748080791::1748080792::1::::<><><>0<>0<>b28d188e0b7043b1f3fe915c4ad0ad24<>res://.godot/imported/10_chicken_ground_attack.png-4ce34534cce5596c6c2a0c24b833c0ca.ctex::
+11_chicken_peck.png::CompressedTexture2D/CompressedTexture2D::7517861933956048396::1748080791::1748080792::1::::<><><>0<>0<>adbac19abe65346e9c5b68655e8e8308<>res://.godot/imported/11_chicken_peck.png-e52e3e49fc365148bf2d2a75d8c7ba04.ctex::
+12_chicken_sit.png::CompressedTexture2D/CompressedTexture2D::2442414984366505803::1748080791::1748080792::1::::<><><>0<>0<>3c25bfde26c03285cf63dab946a20c0d<>res://.godot/imported/12_chicken_sit.png-0dcd12edaf2beb3181c51a1000c03016.ctex::
+13_chicken_hurt.png::CompressedTexture2D/CompressedTexture2D::6149164045656533085::1748080791::1748080792::1::::<><><>0<>0<>14575f758930733c9a56ae277c4efa69<>res://.godot/imported/13_chicken_hurt.png-89dd3ef7b884bfda47ffa68d91f0b96c.ctex::
+14_chicken_fright.png::CompressedTexture2D/CompressedTexture2D::2033058146216351293::1748080791::1748080792::1::::<><><>0<>0<>7460eb3b17600d0a721d1a3f5e95fb3d<>res://.godot/imported/14_chicken_fright.png-f015e9dc89a2fe4660690a8f49b3f8a9.ctex::
+15_chicken_die.png::CompressedTexture2D/CompressedTexture2D::3884245397606587419::1748080791::1748080792::1::::<><><>0<>0<>61e06e2a04669fcd6e62f257f35195d0<>res://.godot/imported/15_chicken_die.png-43816d7f5bf9a8ddb9193b676bf3a9cb.ctex::
 ::res://assets/SSWorlds/::1748043674
 info.txt::TextFile/TextFile::-1::1747734151::0::1::::<><><>0<>0<><>::
 MainLevBuild-ezgif.com-crop.png::CompressedTexture2D/CompressedTexture2D::2591461650400964067::1748043674::1748043674::1::::<><><>0<>0<>4978f3453e67e35bba522ed9895a30fa<>res://.godot/imported/MainLevBuild-ezgif.com-crop.png-8f73cadd38f56bac7ccaa02f31124a36.ctex::
@@ -266,13 +266,13 @@ background_night4C.png::CompressedTexture2D/CompressedTexture2D::479665331494774
 background_night4D.png::CompressedTexture2D/CompressedTexture2D::3187222737106299503::1747734151::1747734152::1::::<><><>0<>0<>2c19fd88bfeaccb3442a74d39122f812<>res://.godot/imported/background_night4D.png-9a27d51194d52af3028db7fa356f3900.ctex::
 ::res://assets/SSWorlds/_PSD/::1747734151
 ::res://assets/SSWorlds/_PSD/anim/::1747734151
-::res://scene/::1748080639
-barrel.tscn::PackedScene::3000427904910123756::1748075445::0::1::::<><><>0<>0<><>::uid://0g2xx3iy77xq::::res://assets/Destructible Objects Sprite Sheet.png<>uid://r1w43tyd71fr::::res://scripts/destructible.gd
-chest.tscn::PackedScene::4501356994493949197::1748075445::0::1::::<><><>0<>0<><>::uid://r1w43tyd71fr::::res://scripts/destructible.gd<>uid://0g2xx3iy77xq::::res://assets/Destructible Objects Sprite Sheet.png
-Main.tscn::PackedScene::2670939427615237526::1748076100::0::1::::<><><>0<>0<><>::uid://bo44o72v6k62c::::res://scene/player.tscn<>uid://bsyg65h2subcw::::res://assets/SSWorlds/_PNG/MainLevBuild.png
-player.tscn::PackedScene::3430718966851107892::1748075445::0::1::::<><><>0<>0<><>::uid://ck231hay1asoh::::res://scripts/player.tres.gd<>uid://ca0ruxomody84::::res://assets/cat_01_spritesheet.png
-ai_chicken.tscn::PackedScene::1969710340501890074::1748080639::0::1::::<><><>0<>0<><>::uid://7fjar41w36uy::::res://ai_chicken.gd<>uid://cggir6qlsbylm::::res://assets/chicken_sprite_sheet.png
-::res://scripts/::1748075391
+::res://scene/::1748093832
+ai_chicken.tscn::PackedScene::1969710340501890074::1748093832::0::1::::<><><>0<>0<><>::uid://7fjar41w36uy::::res://ai_chicken.gd<>uid://cggir6qlsbylm::::res://assets/chicken_sprite_sheet.png
+barrel.tscn::PackedScene::3000427904910123756::1748093832::0::1::::<><><>0<>0<><>::uid://0g2xx3iy77xq::::res://assets/Destructible Objects Sprite Sheet.png<>uid://r1w43tyd71fr::::res://scripts/destructible.gd
+chest.tscn::PackedScene::4501356994493949197::1748093832::0::1::::<><><>0<>0<><>::uid://r1w43tyd71fr::::res://scripts/destructible.gd<>uid://0g2xx3iy77xq::::res://assets/Destructible Objects Sprite Sheet.png
+Main.tscn::PackedScene::2670939427615237526::1748093832::0::1::::<><><>0<>0<><>::uid://bo44o72v6k62c::::res://scene/player.tscn<>uid://bsyg65h2subcw::::res://assets/SSWorlds/_PNG/MainLevBuild.png<>uid://3ce3u2qssjag::::res://scene/ai_chicken.tscn<>uid://bi0ouyjaptfaq::::res://scene/barrel.tscn<>uid://b5eqxsab0ktb6::::res://scene/chest.tscn
+player.tscn::PackedScene::3430718966851107892::1748093832::0::1::::<><><>0<>0<><>::uid://ck231hay1asoh::::res://scripts/player.tres.gd<>uid://ca0ruxomody84::::res://assets/cat_01_spritesheet.png
+::res://scripts/::1748093829
 destructible.gd::GDScript/GDScript::1248273226417043987::1748022008::0::1::::<>Area2D<><>0<>0<><>::
-map_generator.gd::GDScript::5983158924238862496::1748067921::0::1::::<>Node2D<><>0<>0<><>::
-player.tres.gd::GDScript::5532214878353795403::1748075391::0::1::::<>CharacterBody2D<><>0<>0<><>::
+map_generator.gd::GDScript/GDScript::5983158924238862496::1748067921::0::1::::<>Node2D<><>0<>0<><>::
+player.tres.gd::GDScript::5532214878353795403::1748093829::0::1::::<>CharacterBody2D<><>0<>0<><>::
