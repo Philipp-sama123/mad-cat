@@ -2,3 +2,6 @@ res://scene/Main.tscn
 res://scene/player.tscn
 res://scene/barrel.tscn
 res://scene/chest.tscn
+res://tile.tscn
+res://mapgenerator.tscn
+res://scripts/player.tres.gd

@@ -1,6 +1,8 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1748030293
+::res://::1748068023
 icon.svg::CompressedTexture2D/CompressedTexture2D::7884798144622045045::1747212203::1747212402::1::::<><><>0<>0<>1c6c2da4ac2ae380556eb0b7d9893405<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
+mapgenerator.tscn::PackedScene::5627270514605169939::1748067965::0::1::::<><><>0<>0<><>::uid://crij0u37lyg53::::res://scripts/map_generator.gd
+tile.tscn::PackedScene::991037335435701696::1748067965::0::1::::<><><>0<>0<><>::uid://bc6k827ibkjr4::::res://assets/SSWorlds/MainLevBuild-ezgif.com-crop.png
 ::res://assets/::1747857354
 cat_01_spritesheet.png::CompressedTexture2D/CompressedTexture2D::4825519946221220055::1747301158::1747301159::1::::<><><>0<>0<>4bf28a854e6572dfbe5c7bcc4762faac<>res://.godot/imported/cat_01_spritesheet.png-ef36cbca13be77b38e49ab5a4c7ae21a.ctex::
 Destructible Objects Sprite Sheet.png::CompressedTexture2D/CompressedTexture2D::1768789041228103326::1747857354::1747857354::1::::<><><>0<>0<>04f8378be694d83cf720d5c5148a1e44<>res://.godot/imported/Destructible Objects Sprite Sheet.png-4597811187f1886a51aa197e8747e128.ctex::
@@ -207,8 +209,9 @@ cat05_sneak_strip8.png::CompressedTexture2D/CompressedTexture2D::648653654549051
 cat05_walk_strip8.png::CompressedTexture2D/CompressedTexture2D::1393437854311488941::1747299262::1747299264::1::::<><><>0<>0<>e67143921240fa4328c747a395746998<>res://.godot/imported/cat05_walk_strip8.png-dd00687e28628c75ac8243cce9244743.ctex::
 cat05_wallclimb_strip8.png::CompressedTexture2D/CompressedTexture2D::7475350680485332063::1747299262::1747299264::1::::<><><>0<>0<>71830e828f093eb56a76fa85dff7f6e5<>res://.godot/imported/cat05_wallclimb_strip8.png-083c33f6ed27cb9c743590d4374263b5.ctex::
 cat05_wallgrab_strip8.png::CompressedTexture2D/CompressedTexture2D::2014873711528308307::1747299262::1747299264::1::::<><><>0<>0<>5801f476b6a0d104a894d2f5b12ecdfb<>res://.godot/imported/cat05_wallgrab_strip8.png-773274dfb961bfd8a1578949ef9f3237.ctex::
-::res://assets/SSWorlds/::1747734151
+::res://assets/SSWorlds/::1748043674
 info.txt::TextFile/TextFile::-1::1747734151::0::1::::<><><>0<>0<><>::
+MainLevBuild-ezgif.com-crop.png::CompressedTexture2D/CompressedTexture2D::2591461650400964067::1748043674::1748043674::1::::<><><>0<>0<>4978f3453e67e35bba522ed9895a30fa<>res://.godot/imported/MainLevBuild-ezgif.com-crop.png-8f73cadd38f56bac7ccaa02f31124a36.ctex::
 ::res://assets/SSWorlds/_PNG/::1747744915
 Decoratives.png::CompressedTexture2D/CompressedTexture2D::4979243892915975469::1747734151::1747734152::1::::<><><>0<>0<>9dec136a894ba65e0b5f5413a1a2612f<>res://.godot/imported/Decoratives.png-f57a48057de8b62313179868fcf11de6.ctex::
 MainLevBuild.png::CompressedTexture2D/CompressedTexture2D::3699786184608502206::1747734151::1747734152::1::::<><><>0<>0<>9a0daf129ddc347f33b403e942214741<>res://.godot/imported/MainLevBuild.png-0eb4ea76bbde6a815af39416fb0334fc.ctex::
@@ -245,11 +248,13 @@ background_night4C.png::CompressedTexture2D/CompressedTexture2D::479665331494774
 background_night4D.png::CompressedTexture2D/CompressedTexture2D::3187222737106299503::1747734151::1747734152::1::::<><><>0<>0<>2c19fd88bfeaccb3442a74d39122f812<>res://.godot/imported/background_night4D.png-9a27d51194d52af3028db7fa356f3900.ctex::
 ::res://assets/SSWorlds/_PSD/::1747734151
 ::res://assets/SSWorlds/_PSD/anim/::1747734151
-::res://scene/::1748024096
-barrel.tscn::PackedScene::3000427904910123756::1748024096::0::1::::<><><>0<>0<><>::uid://0g2xx3iy77xq::::res://assets/Destructible Objects Sprite Sheet.png<>uid://r1w43tyd71fr::::res://scripts/destructible.gd
-chest.tscn::PackedScene::4501356994493949197::1748024096::0::1::::<><><>0<>0<><>::uid://r1w43tyd71fr::::res://scripts/destructible.gd<>uid://0g2xx3iy77xq::::res://assets/Destructible Objects Sprite Sheet.png
-Main.tscn::PackedScene::2670939427615237526::1748024096::0::1::::<><><>0<>0<><>::uid://bo44o72v6k62c::::res://scene/player.tscn<>uid://bsyg65h2subcw::::res://assets/SSWorlds/_PNG/MainLevBuild.png<>uid://bi0ouyjaptfaq::::res://scene/barrel.tscn<>uid://b5eqxsab0ktb6::::res://scene/chest.tscn
-player.tscn::PackedScene::3430718966851107892::1748024096::0::1::::<><><>0<>0<><>::uid://ck231hay1asoh::::res://scripts/player.tres.gd<>uid://ca0ruxomody84::::res://assets/cat_01_spritesheet.png
-::res://scripts/::1748022008
+::res://scene/::1748067965
+barrel.tscn::PackedScene::3000427904910123756::1748067965::0::1::::<><><>0<>0<><>::uid://0g2xx3iy77xq::::res://assets/Destructible Objects Sprite Sheet.png<>uid://r1w43tyd71fr::::res://scripts/destructible.gd
+chest.tscn::PackedScene::4501356994493949197::1748067965::0::1::::<><><>0<>0<><>::uid://r1w43tyd71fr::::res://scripts/destructible.gd<>uid://0g2xx3iy77xq::::res://assets/Destructible Objects Sprite Sheet.png
+Main.tscn::PackedScene::2670939427615237526::1748067965::0::1::::<><><>0<>0<><>::uid://bo44o72v6k62c::::res://scene/player.tscn<>uid://cmf5k8v452j36::::res://mapgenerator.tscn
+player.tscn::PackedScene::3430718966851107892::1748067965::0::1::::<><><>0<>0<><>::uid://ck231hay1asoh::::res://scripts/player.tres.gd<>uid://ca0ruxomody84::::res://assets/cat_01_spritesheet.png
+::res://scripts/::1748067921
 destructible.gd::GDScript/GDScript::1248273226417043987::1748022008::0::1::::<>Area2D<><>0<>0<><>::
+map_generator.gd::GDScript::5983158924238862496::1748067921::0::1::::<>Node2D<><>0<>0<><>::
+object_pool.gd::GDScript/GDScript::8123848283646478342::1748043831::0::1::::<>Node<><>0<>0<><>::
 player.tres.gd::GDScript/GDScript::5532214878353795403::1748020210::0::1::::<>CharacterBody2D<><>0<>0<><>::
